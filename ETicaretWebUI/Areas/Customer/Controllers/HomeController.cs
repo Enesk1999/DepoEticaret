@@ -8,6 +8,7 @@ using System.Security.Claims;
 
 namespace ETicaretWebUI.Areas.Customer.Controllers
 {
+
     [Area("Customer")]
     public class HomeController : Controller
     {
