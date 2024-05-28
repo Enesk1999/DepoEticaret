@@ -1,0 +1,51 @@
+﻿@model List<Category>
+
+
+
+@if(Model.Any())
+{
+    <div class="container p-2 mt-4">
+       
+        <div class="row">
+            <div class="col-md-6 my-4">
+             <h2>Kategori Listesi</h2>
+      
+            </div>
+            <div class="col-md-6 text-end my-4">
+                <a class="btn btn-dark" asp-controller="Category" asp-action="Create"><i class="bi bi-plus-circle me-2"></i>Kategori Ekle</a>
+            </div>
+            
+        </div>
+    </div>
+   <div class="mb-5">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Kategori Id</th>
+                    <th>Kategori Adı</th>
+                    <th>Kategori Sırası</th>
+                    <th></th>
+                   
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.DisplayOrder</td>
+                        <td>
+                            <div class="w-75" role="group">
+                                <a class="btn btn-info p-2 me-1" asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square me-1"></i>Kategori Düzenle</a>
+                                <a class="btn btn-danger p-2 ms-2" asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash me-1"></i>Kategori Kaldır</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+   </div>
+}

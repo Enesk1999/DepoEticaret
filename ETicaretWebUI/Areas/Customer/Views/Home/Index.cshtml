@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Product>
+
+<div class="row pb-3">
+    @foreach(var item in Model)
+    {
+        <div class="col-lg-3 col-sm-6">
+            <div class="row p-2 ms-2 ">
+                <div class="col-12 p-1">
+                    <div class="card border-0 shadow border-top border-5 rounded" style="height:600px;" >
+                        <img  src="@item.ImageUrl" class="card-img-top rounded" style="object-fit:cover; height:800px;"/>
+                        <div class="p-1 ">
+                            <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@item.Title</p>
+                            <p class="card-title h5 text-dark text-center text-lowercase">üretici: @item.Author</p>
+                        </div>
+                        <div class="pl-1">
+                            <p class="text-dark text-opacity-75 text-center mb-0">Fiyat: <span class="text-decoration-line-through">@item.ListPrice.ToString("c")</span></p>
+
+                            <p class="text-dark text-opacity-75 text-center">En düşük: <span>@item.Price100.ToString("c")</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary btn-gradient border-0 form-control bg-info" asp-action="Details" asp-route-sepetId="@item.Id">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+
+    <div class="card-header bg-primary bg-gradient m-lg-0 py-3">
+        <div class="row pb-2">
+            <div class="col-12">
+                <h2 class="text-light ms-5">Firmalar Listesi</h2>
+                <div class="text-end me-3">
+                    <a class="btn text-light" asp-controller="Company" asp-action="Create"><i class="bi bi-plus-circle me-2"></i>Yeni Firma Ekle</a>
+                </div>
+             
+
+            </div>
+        </div>
+    </div>
+   <div class="mb-5 mt-3">
+        <table id="tblCompany" class="table table-bordered table-striped table-hover shadow-lg">
+            <thead>
+                <tr>
+                    <th>Firma Adı</th>
+                    <th>Firma Sokak</th>
+                    <th>Firma Şehir</th>
+                    <th>Firma Ülke</th>
+                    <th>Posta Kodu</th>
+                    <th>Telefon Numarası</th>
+                    <th></th>
+                 
+                   
+                    
+                    
+                   
+                </tr>
+
+            </thead>
+        </table>
+   </div>
+
+
+@section Scripts{
+    <script src="~/js/company.js"></script>
+}
+

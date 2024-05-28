@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model List<Product>
+
+
+
+@if(Model.Any())
+{
+    <div class="card-header bg-primary bg-gradient m-lg-0 py-3">
+        <div class="row pb-2">
+            <div class="col-12">
+                <h2 class="text-light ms-5">Ürünler Listesi</h2>
+                <div class="text-end me-3">
+                    <a class="btn text-light" asp-controller="Product" asp-action="Create"><i class="bi bi-plus-circle me-2"></i>Ürün Ekle</a>
+                </div>
+             
+
+            </div>
+        </div>
+    </div>
+   <div class="mb-5 mt-3">
+        <table id="tbl" class="table table-bordered table-striped table-hover shadow-lg">
+            <thead>
+                <tr>
+                    <th>Ürün Resim</th>
+                    <th>Ürün Adı</th>
+                    <th>Ürün Üretici Kod</th>
+                    <th>Ürün ISBN</th>
+                    <th>Ürün ListeFiyat</th>
+                    <th>Kategori</th>
+                    <th></th>
+                 
+                   
+                    
+                    
+                   
+                </tr>
+
+            </thead>
+           @*  <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img style="object-fit:cover; border-radius:2px; border:1px solid #bbaabb;" src="@item.ImageUrl" width="100" height="80"/>
+                        </td>
+                        <td>@item.Title</td>
+                        <td>@item.Author</td>
+                        <td>@item.ISBN</td>
+                        <td>@item.ListPrice</td>
+                        <td>@item.Category.Name</td>
+                        <td>
+                                <a class="btn btn-sm btn-info w-100" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square me-1"></i> Ürün Düzenle</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-danger w-100" asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash me-1"></i>Ürün Kaldır</a>
+
+                        </td>
+                    </tr>
+
+                }
+            </tbody> *@
+        </table>
+   </div>
+}
+
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}

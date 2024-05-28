@@ -1,0 +1,9 @@
+﻿
+@if(TempData["basarili"] !=null){
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/toastr.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["basarili"]')
+
+    </script>
+}

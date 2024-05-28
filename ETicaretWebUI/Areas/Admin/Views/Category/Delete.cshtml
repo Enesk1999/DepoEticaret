@@ -1,0 +1,32 @@
+﻿@model Category 
+
+<div class="p-4 shadow border-1 mt-4 mb-5">
+    <div class="row pb-2">
+        <h2 class="text-primary">Kategori Kaldır</h2>
+        
+    </div>
+    <form method="post">
+        <dl>
+            <div class=" p-4 fs-4">
+                <dt>Kategori Id</dt>
+                <dd>@Model.Id</dd>
+                <hr />
+                <dt>Kategori Adı</dt>
+                <dd>@Model.Name</dd>
+                <hr />
+                <dt>Kategori Görüntüleme Sırası</dt>
+                <dd>@Model.DisplayOrder</dd>
+                
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <button class="btn btn-danger" type="submit">Kategori Kaldır</button>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary" asp-controller="Category" asp-action="Index">Anasayfaya Dön</a>
+
+                </div>
+            </div>
+        </dl>
+    </form>
+</div>

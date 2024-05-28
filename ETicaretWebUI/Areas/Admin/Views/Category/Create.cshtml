@@ -1,0 +1,37 @@
+﻿@model Category
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark bg-gradient m-lg-0 py-3">
+        <div class="row pb-2">
+            <div class="col-12 text-center">
+                <h2 class="text-light">Kategori Ekle</h2>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post">
+    <div class="border p-3 mt-4">
+      
+        <div class="form-floating py-2 mb-3 col-12">
+            <input class="form-control border-0 shadow" asp-for="Name" />
+            <label class="form-label fs-4" asp-for="Name"></label>
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-floating py-2 mb-5">
+            <input class="form-control border-0 shadow" asp-for="DisplayOrder" />
+            <label class="form-label fs-4" asp-for="DisplayOrder"></label>
+            <span class="text-danger" asp-validation-for="DisplayOrder"></span>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-success" type="submit">Kategori Ekle</button>
+            </div>
+           <div class="col-3">
+                <a class="btn btn-primary" asp-controller="Category" asp-action="Index">Anasayfaya Dön</a>
+
+           </div>
+        </div>
+        
+    </div>
+</form>

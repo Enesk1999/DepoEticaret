@@ -1,0 +1,79 @@
+﻿@model Company
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark bg-gradient m-lg-0 py-3">
+        <div class="row pb-2">
+            <div class="col-12 text-center">
+                <h2 class="text-light">Firma Güncelle</h2>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div class="row border p-3 mt-4 shadow-lg">
+        <div class="col-md-8 me-5">
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="Name" />
+                <label class="form-label fs-4" asp-for="Name"></label>
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="StreetAddress" />
+                <label class="form-label fs-4" asp-for="StreetAddress"></label>
+                <span class="text-danger" asp-validation-for="StreetAddress"></span>
+            </div>
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="City" />
+                <label class="form-label fs-4" asp-for="City"></label>
+                <span class="text-danger" asp-validation-for="City"></span>
+            </div>
+
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="State" />
+                <label class="form-label fs-4" asp-for="State"></label>
+                <span class="text-danger" asp-validation-for="State"></span>
+            </div>
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="PostalCode" />
+                <label class="form-label fs-4" asp-for="PostalCode"></label>
+                <span class="text-danger" asp-validation-for="PostalCode"></span>
+            </div>
+
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="PhoneNumber" />
+                <label class="form-label fs-4" asp-for="PhoneNumber"></label>
+                <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-success" type="submit">Firma Güncelle</button>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-primary" asp-controller="Company" asp-action="Index">Anasayfaya Dön</a>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+@section Scripts {
+    <!-- Place the first <script> tag in your HTML's <head> -->
+@*     <script src="https://cdn.tiny.cloud/1/7y8m78izvhgh7j1c7cuuazcew6lx578qkfk7jzr8mgyj24x7/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+ *@
+    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
+            toolbar: 'undo redo | blocks fontfamily fon   tsize | bold italic underline strikethrough |',
+        });
+    </script>
+ 
+}

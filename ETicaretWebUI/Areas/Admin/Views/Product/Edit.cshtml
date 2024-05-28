@@ -1,0 +1,101 @@
+﻿@model ProductViewModel
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark bg-gradient m-lg-0 py-3">
+        <div class="row pb-2">
+            <div class="col-12 text-center">
+                <h2 class="text-light">Ürün Güncelle</h2>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Product.Id" />
+    <input type="hidden" asp-for="Product.ImageUrl"/>
+    <div class="row border p-3 mt-4 shadow-lg">
+        <div class="col-md-8 me-5">
+            <div class="form-floating py-2 mb-3 col-12">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.Title" />
+                <label class="form-label fs-4" asp-for="@Model.Product.Title"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Title"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.Author" />
+                <label class="form-label fs-4" asp-for="@Model.Product.Author"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Author"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.ISBN" />
+                <label class="form-label fs-4" asp-for="@Model.Product.ISBN"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.ISBN"></span>
+            </div>
+            <div class="form-floating py-4 mb-5">
+                <textarea  class="form-control border-0 shadow" asp-for="@Model.Product.Description"></textarea>
+                <label class="form-label fs-4" asp-for="@Model.Product.Description"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Description"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.ListPrice" />
+                <label class="form-label fs-4" asp-for="@Model.Product.ListPrice"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.ListPrice"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.Price" />
+                <label class="form-label fs-4" asp-for="@Model.Product.Price"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Price"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.Price50" />
+                <label class="form-label fs-4" asp-for="@Model.Product.Price50"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Price50"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" asp-for="@Model.Product.Price100" />
+                <label class="form-label fs-4" asp-for="@Model.Product.Price100"></label>
+                <span class="text-danger" asp-validation-for="@Model.Product.Price100"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <select class="form-select" asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList">
+                    <option disabled selected>Lütfen Kategori Seçiniz</option>
+                </select>
+                <label class="form-label fs-4" asp-for="Product.CategoryId"></label>
+                <span class="text-danger" asp-validation-for="Product.CategoryId"></span>
+            </div>
+            <div class="form-floating py-2 mb-5">
+                <input class="form-control border-0 shadow" type="file" name="FileImageUrl" asp-for="Product.ImageUrl" />
+                <label class="form-label fs-4" asp-for="Product.ImageUrl"></label>
+            </div>
+        </div>
+        <div class="col-md-2 ms-5">
+            <img  src="@Model.Product.ImageUrl" width="200" height="400" style="border-radius:5px; border:1px solid #bbb9b9; object-fit:cover;" alt="Resim dosyası"/>
+        </div>
+       
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-success" type="submit">Ürünü Güncelle</button>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-primary" asp-controller="Product" asp-action="Index">Anasayfaya Dön</a>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+@section Scripts {
+    <!-- Place the first <script> tag in your HTML's <head> -->
+@*     <script src="https://cdn.tiny.cloud/1/7y8m78izvhgh7j1c7cuuazcew6lx578qkfk7jzr8mgyj24x7/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+ *@
+    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
+            toolbar: 'undo redo | blocks fontfamily fon   tsize | bold italic underline strikethrough |',
+        });
+    </script>
+ 
+}
