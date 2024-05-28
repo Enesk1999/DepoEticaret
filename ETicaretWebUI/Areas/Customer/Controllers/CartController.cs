@@ -108,7 +108,7 @@ namespace ETicaretWebUI.Areas.Customer.Controllers
         [ActionName("Summary")]
         public IActionResult SummaryPOST()
         {
-            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claimsIdentity = (ClaimsIdentity?)User.Identity;
             var kullaniciId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
             //ürün sepet ayarlarlamaları kullanıcı bilgileri ürün bilgileri sepetde ki ürünlerin ayarlamaları
